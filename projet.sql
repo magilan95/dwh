@@ -440,10 +440,13 @@ COMMIT;
 
 select count(*) from D_VENTE_MEDICAMENTS;
 
-/*Creation de la vue mat�rilise de ventre medicament*/
+/*Creation de la vue matérilise de ventre medicament*/
 DROP MATERIALIZED VIEW MV_VENTE_MEDICAMENTS;
 CREATE MATERIALIZED VIEW MV_VENTE_MEDICAMENTS AS
 SELECT * FROM D_VENTE_MEDICAMENTS;
+
+/*Vérification du nombre de valeur de la vue matérialiser*/
+select count(*) from MV_VENTE_MEDICAMENTS;
 
 /*Creation trigger pour mettre a jour la vue materialiser*/
 CREATE OR REPLACE TRIGGER TRG_MAJ_MV_VENTE_MEDICAMENTS

@@ -442,7 +442,7 @@ select count(*) from D_VENTE_MEDICAMENTS;
 
 /*Creation de la vue matérilise de ventre medicament*/
 DROP MATERIALIZED VIEW MV_VENTE_MEDICAMENTS;
-CREATE MATERIALIZED VIEW MV_VENTE_MEDICAMENTS AS
+CREATE MATERIALIZED VIEW MV_VENTE_MEDICAMENTS FOR UPDATE AS
 SELECT * FROM D_VENTE_MEDICAMENTS;
 
 /*Vérification du nombre de ligne dans la vue matérialisé*/
